@@ -4,7 +4,7 @@ var MINUTES_MS = SECONDS_MS * 60;
 var HOURS_MS = MINUTES_MS * 60;
 var DAYS_MS = HOURS_MS * 24;
 
-// Initialization errors are only in English unfortunately
+// Initialization errors are only in English unfortunately.
 function setError(primary, secondary = null) {
   var errorElement = document.getElementById('error');
   errorElement.classList.remove('hidden');
@@ -24,6 +24,52 @@ function setError(primary, secondary = null) {
 // Localization
 function getMessage(language, messageKey) {
   var translations = {
+    // English
+    // English
+    'en': {
+      'timer-description': 'Timer expiring at',
+      'timer-progress': 'This timer will expire in',
+      'timer-finished': 'This timer has been expired since',
+      'timer-type': 'Timer Type',
+      'timer-type-generic': 'Generic',
+      'timer-type-deletion': 'Deletion',
+      'timer-type-ban': 'Ban',
+      'duration': 'Duration',
+      'duration-1d': '1 Day',
+      'duration-1w': '1 Week',
+      'duration-2w': '2 Weeks',
+      'duration-1y': '1 Year',
+      'duration-custom': 'Custom',
+      'unit-minute': 'minutes',
+      'unit-hour': 'hours',
+      'unit-day': 'days',
+      'unit-week': 'weeks',
+      'unit-month': 'months',
+      'unit-year': 'years',
+      'start-time': 'Start Time',
+      'start-time-now': 'Now',
+      'start-time-later': 'Later',
+      'messages': 'Messages',
+      'message-progress': 'Timer in-progress (optional)',
+      'message-finished': 'Timer finished (optional)',
+      'advanced-section': 'Advanced',
+      'height': 'Height',
+      'width': 'Width',
+      'css-extra': 'Custom timer CSS (optional)',
+      'template': 'Output template',
+      'template-deletion': 'Due to the low rating of this post (-X), it will be deleted:\n\n%%iframe%%\n\nPlease modify the post as soon as possible.\nIf the author fails to make changes in time, you can apply for a rewrite from the executive committee of the JW branch after confirmation.',
+      'template-ban': 'Site member [[*user USERNAME]] has violated site regulations [Site Rules Section], and will receive a ban according to the website rules.\n\n%%iframe%%\n\nIf there are any questions about this punishment, please contact the executive committee of the JW branch.\nThis punishment is eligible for appeal.',
+      'message-deletion-progress': 'This page will be eligible for deletion in',
+      'message-deletion-finished': 'This page has been eligible for deletion since',
+      'message-ban-progress': 'This user\'s ban will elapse in',
+      'message-ban-finished': 'This user\'s ban has been expired since',
+      'build-timer': 'Build timer',
+      'info-help': 'help',
+      'info-source': 'source',
+      'error-missing': 'Please make a selection in each section first.',
+      'error-invalid': 'Invalid internal state, please file a bug report.',
+    },
+    
     // Simplified Chinese
     'zh-hans': {
       'timer-description': '此计时器将过期于：',
@@ -57,9 +103,8 @@ function getMessage(language, messageKey) {
       'width': '宽度',
       'css-extra': '自定计时器样式（可选）',
       'template': '输出模板',
-      'template-deletion': '因为本文章评分已低至了-X的低分，在此宣告将删除此页面：\n\n%%iframe%%\n\n请本文章作者尽快进行修改。\n如果该页面作者无法及时做出更改，你也可以在确认后向站务团队申请重写。',
-      'template-ban': '网站成员[[*user USERNAME]]【违规行为】，违反了网站站规【网站站规条目号】，依据网站站规，将对网站成员[[*user USERNAME]]进行封禁处分。\n\n%%iframe%%\n\n如果对此次处理结果有疑问，可以联系站务团队。\n本次处分允许上诉。',
-      'template-restrict': '网站成员[[*user USERNAME]]【违规行为】，滥用相应功能并违反了网站站规【网站站规条目号】，将对网站成员[[*user USERNAME]]进行限制讨论功能的处分。\n\n%%iframe%%\n\n如果对此次处理结果有疑问，可以联系站务团队。\n本次处分允许上诉。',
+      'template-deletion': '因为本文章评分已低至了-X的低分，在此宣告将删除此页面：\n\n%%iframe%%\n\n请本文章作者尽快进行修改。\n如果该页面作者无法及时做出更改，你也可以在确认后向JW分部常务委员会申请重写。',
+      'template-ban': '网站成员[[*user USERNAME]]【违规行为】，违反了网站站规【网站站规条目】，依据网站站规，将对网站成员[[*user USERNAME]]进行封禁处分。\n\n%%iframe%%\n\n如果对此次处理结果有疑问，可以联系JW分部常务委员会。\n本次处分允许上诉。',
       'message-deletion-progress': '此页面将在计时器到期后可供删除：',
       'message-deletion-finished': '此页面在下列时间可前已可供删除：',
       'message-ban-progress': '此用户的封禁将到期于：',
@@ -106,9 +151,8 @@ function getMessage(language, messageKey) {
       'width': '寬度',
       'css-extra': '自定義計時器樣式（可選）',
       'template': '輸出内容模板',
-      'template-deletion': '因爲本文章評分已低到-X分，故此宣告將刪除此頁面：\n\n%%iframe%%\n\n請本文章的作者快速修改内容提高質量。\n如果該頁面作者無法及時的修改，你也可以在確認后向站務團隊申請重寫。',
-      'template-ban': '網站成員[[*user USERNAME]]【違規行爲】，違反了網站站規【網站站規條目號】，依據網站站規，對[[*user USERNAME]]進行封禁處分。\n\n%%iframe%%\n\n如果對此次處理結果有疑問，可以聯係站務團隊。\n本次處分允許上訴。',
-      'template-restrict': '網站成員[[*user USERNAME]]【違規行爲】，濫用相應功能并違反了網站規定【網站站規條目號】，將對網站成員[[*user USERNAME]]進行限制討論功能的處分。\n\n%%iframe%%\n\n如果對此次處理結果有疑問，可以聯係站務團隊。\n本次處分允許上訴。',
+      'template-deletion': '因爲本文章評分已低到-X分，故此宣告將刪除此頁面：\n\n%%iframe%%\n\n請本文章的作者快速修改内容提高質量。\n如果該頁面作者無法及時的修改，你也可以在確認后向JW新部常務委員會申請重寫。',
+      'template-ban': '網站成員[[*user USERNAME]]【違規行爲】，違反了網站站規【網站站規條目】，依據網站站規，對[[*user USERNAME]]進行封禁處分。\n\n%%iframe%%\n\n如果對此次處理結果有疑問，可以聯係JW新部常務委員會。\n本次處分允許上訴。',
       'message-deletion-progress': '此页面将在计时器到期后可供删除：',
       'message-deletion-finished': '此页面在下列时间可前已可供删除：',
       'message-ban-progress': '此用户的封禁将過期于：',
@@ -122,6 +166,7 @@ function getMessage(language, messageKey) {
       'error-invalid': '內部狀態無效，請提交錯誤報告。',
     },
   };
+
   // Special case:
   // The 'test' language just echoes the message key back out.
   if (language === 'test') {
@@ -175,7 +220,7 @@ function buildUrl(language, startDate, durationMs, progressMessage, finishedMess
     parameters.append('style', styling);
   }
 
-  return 'https://deepforest-club.github.io/DFC-timer/timer.html?' + parameters;
+  return 'https://scpwiki.github.io/timer/timer.html?' + parameters;
 }
 
 function buildWikitext(template, url, height, width) {
@@ -321,7 +366,6 @@ function initializeMessages(language) {
   setMessage('timer-type-generic-label', 'timer-type-generic');
   setMessage('timer-type-deletion-label', 'timer-type-deletion');
   setMessage('timer-type-ban-label', 'timer-type-ban');
-  setMessage('timer-type-restrict-label', 'timer-type-restrict');
 
   setMessage('start-label', 'start-time');
   setMessage('start-now-label', 'start-time-now');
@@ -378,12 +422,6 @@ function initializeHooks(language) {
     document.getElementById('message-finished').value = getMessage(language, 'message-ban-finished');
     document.getElementById('template').value = getMessage(language, 'template-ban');
   };
-  
-  document.getElementById('timer-type-restrict').onclick = function () {
-    document.getElementById('message-progress').value = getMessage(language, 'message-restrict-progress');
-    document.getElementById('message-finished').value = getMessage(language, 'message-restrict-finished');
-    document.getElementById('template').value = getMessage(language, 'template-restrict');
-  };
 
   function onClickStartDate() {
     document.getElementById('start-later').click();
@@ -413,7 +451,7 @@ function setup() {
 
   // Check parameters
   if (!language) {
-    setError('No language set', 'Parameter is "lang" Use language code.');
+    setError('No language set', 'Parameter is "lang". Use "en" for English.');
     return;
   }
 
