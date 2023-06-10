@@ -25,7 +25,6 @@ function setError(primary, secondary = null) {
 function getMessage(language, messageKey) {
   var translations = {
     // English
-    // English
     'en': {
       'timer-description': 'Timer expiring at',
       'timer-progress': 'This timer will expire in',
@@ -220,7 +219,7 @@ function buildUrl(language, startDate, durationMs, progressMessage, finishedMess
     parameters.append('style', styling);
   }
 
-  return 'https://scpwiki.github.io/timer/timer.html?' + parameters;
+  return 'https://lest-day.github.io/SCPJW-timer/timer.html?' + parameters;
 }
 
 function buildWikitext(template, url, height, width) {
