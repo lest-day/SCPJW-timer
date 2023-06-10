@@ -31,8 +31,21 @@ function setError(primary, secondary = null) {
 // Localization
 function getMessage(language, messageKey) {
   var translations = {
+    // English
+    'en': {
+      'timer-description': 'Timer expiring at',
+      'timer-progress': 'This timer will expire in',
+      'timer-finished': 'This timer has been expired since',
+      'years': 'years',
+      'months': 'months',
+      'days': 'days',
+      'hours': 'hours',
+      'minutes': 'minutes',
+      'seconds': 'seconds',
+    },
+    
     // Simplified Chinese
-    'zh-hans': {
+    'cn': {
       'timer-description': '此计时器将过期于：',
       'timer-progress': '此计时器将过期于：',
       'timer-finished': '此计时器已过期：',
@@ -45,7 +58,7 @@ function getMessage(language, messageKey) {
     },
     
     // Traditional Chinese
-    'zh-hant': {
+    'zh': {
       'timer-description': '此計時器將过期於：',
       'timer-progress': '此計時器將過期于：',
       'timer-finished': '此計時器已過期：',
