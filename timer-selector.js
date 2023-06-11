@@ -105,7 +105,7 @@ function getMessage(language, messageKey) {
       'template-deletion': '因为本文章评分已低至了-X的低分，在此宣告将删除此页面：\n\n%%iframe%%\n\n请本文章作者尽快进行修改。\n如果该页面作者无法及时做出更改，你也可以在确认后向JW分部常务委员会申请重写。',
       'template-ban': '网站成员[[*user USERNAME]]【违规行为】，违反了网站站规【网站站规条目】，依据网站站规，将对网站成员[[*user USERNAME]]进行封禁处分。\n\n%%iframe%%\n\n如果对此次处理结果有疑问，可以联系JW分部常务委员会。\n本次处分允许上诉。',
       'message-deletion-progress': '此页面将在计时器到期后可供删除：',
-      'message-deletion-finished': '此页面在下列时间可前已可供删除：',
+      'message-deletion-finished': '此页面在下列时间前已可供删除：',
       'message-ban-progress': '此用户的封禁将到期于：',
       'message-ban-finished': '此用户的封禁已到期：',
       'message-restrict-progress': '此用户的限制将到期于：',
