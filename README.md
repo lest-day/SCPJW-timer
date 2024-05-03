@@ -14,5 +14,5 @@
 scpwiki/timer
 Copyright (c) 2022 The SCP Wiki
 lest-day/SCPJW-timer
-Copyright (c) 2023 DeepForest-Club
+Copyright (c) 2023 SCP-NJW
 ```
